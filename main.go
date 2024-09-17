@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"task1_in_memory_cache/memory"
+
+	"github.com/DmytroBeliasnyk/task1_in_memory_cache_go.git/memory"
 )
 
 func main() {
