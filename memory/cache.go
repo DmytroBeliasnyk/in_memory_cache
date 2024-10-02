@@ -30,18 +30,6 @@ func GetCache() *Cache {
 	return single
 }
 
-func (c *Cache) String() (res string) {
-	c.mu.RLock()
-	defer c.mu.RUnlock()
-
-	res = "IN MEMORY CACHE:\n"
-	for k, v := range c.memoryCache {
-		res += fmt.Sprintf("#%s - %v\n", k, v)
-	}
-
-	return
-}
-
 func (c *Cache) Set(key string, value interface{}, ttl time.Duration) error {
 	defer c.mu.Unlock()
 	c.mu.Lock()
